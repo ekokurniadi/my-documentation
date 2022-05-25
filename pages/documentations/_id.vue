@@ -98,6 +98,13 @@ export default {
   mounted() {
     this.getHeader()
     this.getAllDetail()
+
+    this._editor = new CodeMirror(document.getElementById('code'), {
+      lineNumbers: true,
+      tabSize: 2,
+      mode: 'javascript',
+      theme: 'monokai',
+    })
   },
 }
 </script>
