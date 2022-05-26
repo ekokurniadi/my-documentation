@@ -92,24 +92,23 @@ export default {
         )
         .then((response) => {
           this.detail = response.data.data
-          setTimeout(() => {
-            this.detail.forEach((data) => {
-              var editor = CodeMirror.fromTextArea(
-                document.getElementById(data.id),
-                {
-                  lineNumbers: true,
-                  mode: 'application/dart',
-                  theme: 'monokai',
-                  lineNumbers: true,
-                  lineWrapping: true,
-                  indentUnit: 4,
-                  height: 400,
-                  readOnly: true,
-                }
-              )
-              editor.setSize(null, 400)
-            })
-          }, 1000)
+
+          this.detail.forEach((data) => {
+            var editor = CodeMirror.fromTextArea(
+              document.getElementById(data.id),
+              {
+                lineNumbers: true,
+                mode: 'application/dart',
+                theme: 'monokai',
+                lineNumbers: true,
+                lineWrapping: true,
+                indentUnit: 4,
+                height: 400,
+                readOnly: true,
+              }
+            )
+            editor.setSize(null, 400)
+          })
         })
     },
   },
