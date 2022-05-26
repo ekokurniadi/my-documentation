@@ -81,7 +81,7 @@ export default {
     title: 'User Auth',
     meta: [{ hid: 'User auth' }],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/helmet.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/icon?family=Material+Icons',

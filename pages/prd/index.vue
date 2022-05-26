@@ -129,10 +129,9 @@ export default {
     },
 
     async getAll(params) {
-      return await this.$axios.get(
-        `${process.env.API_BASE_URL}/document_requirement/document_fetch`,
-        { params }
-      )
+      return await this.$axios.get(`${process.env.API_BASE_URL}/prd_ssr`, {
+        params,
+      })
     },
     retrieveData() {
       const params = this.getRequestParams(
@@ -143,9 +142,9 @@ export default {
       this.getAll(params)
         .then((response) => {
           this.loading = true
-          const { data, totalPages } = response.data
+          const { data, total_pages } = response.data
           this.documentations = data.map(this.getDisplayData)
-          this.totalPages = totalPages
+          this.total_pages = total_pages
           this.loading = false
         })
         .catch((e) => {
@@ -169,7 +168,7 @@ export default {
       return {
         id: data.id,
         documentName: data.document_name,
-        documentRelation: data.document_relation,
+        documentRelation: data.description,
         link: data.link,
       }
     },

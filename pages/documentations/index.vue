@@ -54,7 +54,7 @@
             <div class="col-md-12">
               <v-pagination
                 v-model="page"
-                :length="totalPages"
+                :length="total_pages"
                 total-visible="7"
                 next-icon="mdi-menu-right"
                 prev-icon="mdi-menu-left"
@@ -105,7 +105,7 @@ export default {
         },
       ],
       page: 1,
-      totalPages: 0,
+      total_pages: 0,
       pageSize: 10,
       pageSizes: [5, 10, 25, 50, 100],
       loading: true,
@@ -123,7 +123,7 @@ export default {
     getRequestParams(searchParams, page, pageSize) {
       let params = {}
       if (searchParams) {
-        params['feature_name'] = searchParams
+        params['search'] = searchParams
       }
       if (page) {
         params['page'] = page - 1
@@ -135,10 +135,9 @@ export default {
     },
 
     async getAll(params) {
-      return await this.$axios.get(
-        `${process.env.API_BASE_URL}/documentations/documentations_fetch`,
-        { params }
-      )
+      return await this.$axios.get(`${process.env.API_BASE_URL}/features_ssr`, {
+        params,
+      })
     },
     retrieveData() {
       const params = this.getRequestParams(
@@ -149,9 +148,9 @@ export default {
       this.getAll(params)
         .then((response) => {
           this.loading = true
-          const { data, totalPages } = response.data
+          const { data, total_pages } = response.data
           this.documentations = data.map(this.getDisplayData)
-          this.totalPages = totalPages
+          this.total_pages = total_pages
           this.loading = false
         })
         .catch((e) => {

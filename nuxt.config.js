@@ -12,7 +12,7 @@ export default {
           { name: 'format-detection', content: 'telephone=no' },
       ],
       link: [
-          { rel: 'icon', type: 'image/x-icon', href: '/helmet.ico' },
+          { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
           { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.7.2/css/all.css' },
           { rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' }
       ],
@@ -71,17 +71,17 @@ export default {
       strategies: {
           local: {
               token: {
-                  property: "data.id"
+                  property: "data.token"
               },
               endpoints: {
                   login: {
-                      url: '/auth/login_user',
+                      url: '/login',
                       method: 'post',
-                      propertyName: 'data.id',
+                      propertyName: 'data.token',
                   },
                   logout: false,
                   user: {
-                      url: '/users/get_user',
+                      url: '/users',
                       method: 'get',
                       propertyName: 'data',
                   },
@@ -93,12 +93,12 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-      baseURL: 'https://komun-apps.000webhostapp.com/doc',
+      baseURL: 'https://mydoc-panel.herokuapp.com/api/v1',
 
   },
   env: {
-      API_BASE_URL: 'https://komun-apps.000webhostapp.com/doc',
-      BASE_URL: 'https://komun-apps.000webhostapp.com/doc'
+      API_BASE_URL: 'https://mydoc-panel.herokuapp.com/api/v1',
+      BASE_URL: 'https://mydoc-panel.herokuapp.com/api/v1'
   },
 
 
