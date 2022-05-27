@@ -54,7 +54,7 @@
             <div class="col-md-12">
               <v-pagination
                 v-model="page"
-                :length="totalPages"
+                :length="total_pages"
                 total-visible="7"
                 next-icon="mdi-menu-right"
                 prev-icon="mdi-menu-left"
@@ -99,7 +99,7 @@ export default {
         },
       ],
       page: 1,
-      totalPages: 0,
+      total_pages: 0,
       pageSize: 10,
       pageSizes: [5, 10, 25, 50, 100],
       loading: true,
