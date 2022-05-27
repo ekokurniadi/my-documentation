@@ -35,7 +35,7 @@
               <span style="font-weight: bold; font-size: 16px"
                 >Path of File :</span
               >
-              <span>{{ data.path }}</span>
+              <span>{{ data.path_of_file }}</span>
               <p></p>
               <textarea
                 name=""
