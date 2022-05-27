@@ -55,6 +55,9 @@
         </div>
       </div>
     </div>
+    <v-overlay :value="this.isLoading">
+      <v-progress-circular indeterminate size="64"></v-progress-circular>
+    </v-overlay>
   </div>
 </template>
 <script>
@@ -66,6 +69,7 @@ export default {
         featureName: '',
         featureDescription: '',
       },
+      isLoading: false,
     }
   },
   methods: {
@@ -78,12 +82,14 @@ export default {
         })
     },
     async getAllDetail() {
+      this.isLoading = true
       return await this.$axios
         .get(
           `${process.env.API_BASE_URL}/feature_details/` + this.$route.params.id
         )
         .then((response) => {
           this.detail = response.data.data
+          this.isLoading = false
           setTimeout(() => {
             this.detail.forEach((data) => {
               var editor = CodeMirror.fromTextArea(
