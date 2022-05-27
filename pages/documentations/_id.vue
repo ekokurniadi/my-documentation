@@ -1,8 +1,8 @@
 <template>
   <div>
     <h2 class="mb-4">{{ header.featureName }}</h2>
-    <a href="/documentations" class="btn btn-danger mb-3"
-      ><i class="fa fa-arrow-left"></i> Back</a
+    <nuxt-link to="/documentations" class="btn btn-danger mb-3"
+      ><i class="fa fa-arrow-left"></i> Back</nuxt-link
     >
     <div class="card mb-4">
       <div class="card-body">
