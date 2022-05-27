@@ -38,6 +38,7 @@
               <span>{{ data.path_of_file }}</span>
               <p></p>
               <span style="font-weight: bold; font-size: 16px">Code :</span>
+
               <textarea
                 name=""
                 :id="data.id"
