@@ -56,17 +56,6 @@
 </template>
 <script>
 export default {
-  head: {
-    link: [
-      { rel: 'stylesheet', href: '/codemirror/lib/codemirror.css' },
-      { rel: 'stylesheet', href: '/codemirror/theme/monokai.css' },
-    ],
-    script: [
-      { src: '/codemirror/lib/codemirror.js' },
-      { src: '/codemirror/mode/clike/clike.js' },
-      { src: '/codemirror/mode/dart/dart.js' },
-    ],
-  },
   data() {
     return {
       detail: [],

@@ -14,14 +14,18 @@ export default {
       link: [
           { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
           { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.7.2/css/all.css' },
-          { rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' }
-      ],
+          { rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' },
+          { rel: 'stylesheet', href: '/codemirror/lib/codemirror.css' },
+          { rel: 'stylesheet', href: '/codemirror/theme/monokai.css' },
+        ],
       script: [
           { src: "//cdn.jsdelivr.net/npm/sweetalert2@11" },
           { src: "/js/jquery.min.js" },
           { src: "/js/bootstrap.bundle.min.js" },
           { src: "/js/bootadmin.min.js" },
-
+          { src: '/codemirror/lib/codemirror.js' },
+          { src: '/codemirror/mode/clike/clike.js' },
+          { src: '/codemirror/mode/dart/dart.js' },
       ],
   },
   loading: { color: 'red' },
